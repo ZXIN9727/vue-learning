@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bable-loader": "^0.0.1-security",
     "jquery": "^3.6.0"
   },
   "devDependencies": {
