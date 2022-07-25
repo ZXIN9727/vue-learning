@@ -1,7 +1,8 @@
 import $ from 'jquery'
-import './css/index.css'
-import './css/index.less'
-import logo from './images/logo.jpeg'
+import '@/css/index.css'
+import '@/css/index.less'
+import logo from '@/images/logo.jpeg'
+import '@/js/test/info'
 
 $('.box').attr('src', logo)
 
