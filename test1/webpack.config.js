@@ -17,7 +17,7 @@ module.exports = {
         }, {
             test: /\.jpeg|jpg|gif|png$/, use: 'url-loader?limit=1024'
         }, {
-            test: /\.js/, use: 'babel-loader', exclude: '/node_modules'
+            test: /\.js/, use: 'babel-loader', exclude: /node_modules/
         }]
     }
 }
