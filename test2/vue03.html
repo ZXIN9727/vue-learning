@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input :placeholder="tips" type="text">
+    <hr>
+    <img :src="photo" style="width: 150px">
+
+
+    <div>1 + 2 的结果是： {{1 + 2}}</div>
+    <div>{{tips}} 反转的结果是： {{tips.split('').reverse().join('')}}</div>
+    <div :title="'box' + index">这是一个 div</div>
+
+</div>
+
+<script src="./lib/vue.js"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            tips: '请输入用户名',
+            photo: 'https://cn.vuejs.org/images/logo.svg',
+            index: 3
+        }
+    })
+</script>
+</body>
+</html>
