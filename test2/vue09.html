@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model.number="a"> + <input type="text" v-model.number="b"> = <span>{{a + b}}</span>
+    <hr>
+    <input type="text" v-model.trim="username">
+    <hr>
+    <button @click="showName">获取用户名</button>
+    <hr>
+    <input type="text" v-model.lazy="username">
+
+
+</div>
+
+<script src="./lib/vue.js"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            username: '',
+            a: 0,
+            b: 0
+        },
+        methods: {
+            showName() {
+                console.log(`用户名是："${this.username}"`)
+            }
+        }
+    })
+</script>
+</body>
+</html>

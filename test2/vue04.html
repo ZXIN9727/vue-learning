@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p>count 的值是： {{count}}</p>
+    <button @click="add(2)"> +2</button>
+    <button @click="sub"> -1</button>
+</div>
+
+
+<script src="./lib/vue.js"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            count: 0
+        },
+        methods: {
+            add(n) {
+                console.log('add');
+                this.count += n;
+            },
+            sub() {
+                console.log('sub');
+                this.count--
+            }
+        }
+    })
+</script>
+</body>
+</html>
