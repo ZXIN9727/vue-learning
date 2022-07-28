@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p v-if="flag">v-if</p>
+    <p v-show="!flag">v-show</p>
+    <button @click="change">change</button>
+    <hr>
+    <input type="text" v-model.number="score">
+    <p>{{score}}</p>
+    <p v-if="score >= 85">优</p>
+    <p v-else-if="score >= 70">良</p>
+    <p v-else-if="score >= 60">中</p>
+    <p v-else>差</p>
+</div>
+
+<script src="./lib/vue.js"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            flag: true,
+            score: 0
+        },
+        methods: {
+            change() {
+                this.flag = !this.flag;
+            }
+        }
+    })
+</script>
+</body>
+</html>
