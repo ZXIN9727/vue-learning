@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <span>R:</span><input type="text" v-model.number="r">
+    <span>G:</span><input type="text" v-model.number="g">
+    <span>B:</span><input type="text" v-model.number="b">
+    <hr>
+    <div :style="{backgroundColor: rgb}" class="box">
+        {{rgb}}
+    </div>
+    <button @click="show">按钮</button>
+</div>
+<script src="./lib/vue.js"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            r: 0,
+            g: 0,
+            b: 0
+        },
+        computed: {
+            rgb() {
+                return `rgb(${this.r},${this.g},${this.b})`
+            }
+        },
+        methods: {
+            show() {
+                console.log(rgb)
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

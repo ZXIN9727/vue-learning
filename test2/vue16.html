@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model.lazy="username">
+</div>
+
+<script src="./lib/vue.js"></script>
+<script src="./lib/jquery-3.6.0.min.js"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            username: 'admin'
+        },
+        watch: {
+            username: {
+                handler(newVal, oldVal) {
+                    if (newVal === '') return;
+                    $.get("https://www.escook.cn/api/finduser/" + newVal, function (result) {
+                        console.log(result)
+                    })
+                },
+                immediate: true
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

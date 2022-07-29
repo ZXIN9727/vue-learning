@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model.lazy="info.username">
+    <input type="text" v-model.lazy.number="info.age">
+</div>
+
+<script src="./lib/vue.js"></script>
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            info: {
+                username: 'admin',
+                age: 12
+            }
+        },
+        watch: {
+            info: {
+                handler(newVal) {
+                    console.log(newVal.username)
+                },
+                deep: true
+            },
+
+            'info.age'(newVal) {
+                console.log(newVal)
+            }
+
+        }
+    })
+
+</script>
+</body>
+</html>
